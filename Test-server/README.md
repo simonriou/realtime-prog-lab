@@ -21,29 +21,7 @@ This is a simple UDP server implemented in Python. It listens for incoming UDP m
 ## How to Test the Server
 
 Make sure you keep your terminal window open to keep the server running.
-You can use a UDP client to send messages to the server. Here is an example using Python:
-
-```python
-import socket
-
-# Client config
-HOST = '127.0.0.1'
-PORT = 12345
-
-# Create UDP socket
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-# Send a message to the server
-message = "Hello, server!"
-client_socket.sendto(message.encode(), (HOST, PORT))
-
-# Receive a response from the server
-response, server_address = client_socket.recvfrom(1024)
-print(f"Received response from server: {response.decode()}")
-
-# Close the socket
-client_socket.close()
-```
+You can use a UDP client to send messages to the server. Using the `send.c` file from the `exercise-2` branch.
 
 ## Handling Server Shutdown
 
